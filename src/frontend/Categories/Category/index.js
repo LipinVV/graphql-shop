@@ -38,6 +38,7 @@ export const Category = () => {
     }
 
     const [filter, setFilter] = useState({price: [], onSale: []});
+
     const options = {
         price: ['high', 'low'],
         onSale: [true, false]
