@@ -1,0 +1,29 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-gap: 10px;
+    padding: 25px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-product {
+    display: grid;
+    border: 3px solid orangered;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.products-product_link {
+    color: black;
+    font-size: 10px;
+    text-decoration: none;
+
+}
+
+.products-product_link:hover {
+    color: mediumseagreen;
+}

@@ -1,0 +1,25 @@
+.links {
+    display: grid;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    padding: 20px;
+    grid-gap: 10px;
+    max-width: 520px;
+    margin: 0 auto;
+
+}
+
+.links__link {
+    display: flex;
+}
+
+.links__link_ref {
+    color: black;
+    text-decoration: none;
+}
+
+.links__link_ref:hover {
+    color: deeppink;
+}
