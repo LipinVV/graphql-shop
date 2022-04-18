@@ -37,28 +37,34 @@ export const Category = () => {
         setProductsToSort(arrangedWords);
     }
 
-    const [filter, setFilter] = useState({price: [], onSale: []});
+    const [filter, setFilter] = useState({price: [], onSale: [], priceScaling: []});
 
     const options = {
         price: ['high', 'low'],
-        onSale: [true, false]
+        onSale: [true, false],
+        priceScaling: [true, false]
     }
 
     useEffect(() => {
         const getFilteredProducts = (productsFromState, filter) => {
             let result = productsFromState;
             if (filter?.onSale.length > 0) {
-                result = result?.filter(product => filter.onSale.includes(product.onSale))
+                result = result?.slice().filter(product => filter.onSale.includes(product.onSale))
+            }
+            if(filter?.priceScaling.at(-1) === true) {
+                result = result?.slice().sort((a, b) => b.price - a.price);
+            }
+            if(filter?.priceScaling.at(-1) === false) {
+                result = result?.slice().sort((a, b) => a.price - b.price);
             }
             return result;
         }
         setFilteredProducts(getFilteredProducts(productsToSort, filter));
     }, [filter, productsToSort])
-
+    console.log(filter.priceScaling?.at(-1))
 
     if (error) return <div>There is no such product</div>
     if (loading) return <div>Loading product</div>
-
 
     return <div style={{margin: '0 auto'}}>
         <h4 className='category__header'>{data?.category?.name}</h4>
@@ -79,6 +85,28 @@ export const Category = () => {
                                 setFilter({...filter, onSale: newOnSaleOption});
                             }}
                         />{onSaleOption ? 'On Sale' : 'Regular Price'}
+                    </label>
+                </div>
+            )
+        })}
+        {options.priceScaling.map(priceScaleOption => {
+            return (
+                <div key={priceScaleOption.toString()}>
+                    <label>
+                        <input
+                            type='checkbox'
+                            // checked={filter.priceScaling?.at(-1) === priceScaleOption}
+                            onChange={(event) => {
+                                let priceScalingOption = [];
+                                if (event.target.checked) {
+                                    priceScalingOption.push(priceScaleOption);
+                                } else {
+                                    console.log('ELSE')
+                                    priceScalingOption = priceScalingOption.filter(selectedOption => priceScaleOption !== selectedOption);
+                                }
+                                setFilter({...filter, priceScaling: priceScalingOption});
+                            }}
+                        />{priceScaleOption ? 'By highest price' : 'By lowest price'}
                     </label>
                 </div>
             )
