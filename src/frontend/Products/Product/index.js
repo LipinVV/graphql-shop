@@ -24,6 +24,9 @@ export const Product = () => {
                 <span className='product__field_decor'>Category: </span>
                 {filteredProduct.category.name}
             </span>
+            <span>{filteredProduct.comments.map(comment => {
+                return <span key={comment.id}>{comment.text}</span>
+            })}</span>
         </div>
     )
 }

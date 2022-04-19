@@ -3,12 +3,13 @@ const {typeDefs} = require("../graphql/schema");
 const {Category} = require("../graphql/resolvers/Category");
 const {Product} = require("../graphql/resolvers/Product");
 const {Query} = require("../graphql/resolvers/Query");
-const {PRODUCTS, CATEGORIES} = require("../data/products")
+const {Mutation} = require("../graphql/resolvers/Comment");
+const {PRODUCTS, CATEGORIES} = require("../data/products");
 
 const server = new ApolloServer({
     typeDefs,
     resolvers: {
-        Query, Category, Product
+        Query, Category, Product, Mutation
     },
     context: {
         PRODUCTS,

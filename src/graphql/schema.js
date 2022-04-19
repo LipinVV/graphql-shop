@@ -18,11 +18,26 @@ exports.typeDefs = gql`
         category_id: Int!
         onSale: Boolean!
         category: Category
+        comments: [Comment!]!
     }
     type Category {
         id: ID
         name: String!
         products(filter: ProductFilterBySale):  [Product!]!
+    }
+    
+    type Comment {
+        id: ID!,
+        text: String
+    }
+    
+    type Mutation {
+        addComment(input: AddCommentInput!): Comment!
+    }
+    
+    input AddCommentInput {
+        productId: Int!
+        text: String
     }
     
     input ProductFilterBySale {

@@ -2,6 +2,7 @@ import {Link, useParams} from "react-router-dom";
 import {GetProductsByCategory} from "../../../graphql/hooks/getProductsByCategory";
 import {useEffect, useState} from "react";
 import './category.css';
+import {Comments} from "../../Products/Product/Comments/Comments";
 
 export const Category = () => {
     const {id} = useParams();
@@ -61,7 +62,6 @@ export const Category = () => {
         }
         setFilteredProducts(getFilteredProducts(productsToSort, filter));
     }, [filter, productsToSort])
-    console.log(filter.priceScaling?.at(-1))
 
     if (error) return <div>There is no such product</div>
     if (loading) return <div>Loading product</div>
@@ -116,6 +116,7 @@ export const Category = () => {
                 <Link to={`/products/${product.id}`} className='category__product_link'>{product.name}</Link>
                 <span>{product.price}</span>
                 <span>{product.onSale ? 'On Sale!' : 'Regular Price'}</span>
+                <Comments comments={product.comments} productId={product.id} />
             </div>)}
         </div>
     </div>

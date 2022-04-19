@@ -17,6 +17,10 @@ export const GET_FILTERED_PRODUCT = gql`
             name,
             color,
             price,
+            comments {
+                id,
+                text
+            }
             category {
                 id,
                 name
@@ -44,7 +48,11 @@ export const GET_PRODUCTS_BY_CATEGORY = gql`
                 id,
                 name,
                 price,
-                onSale
+                onSale,
+                comments {
+                    id,
+                    text
+                }
             }
         }
     }

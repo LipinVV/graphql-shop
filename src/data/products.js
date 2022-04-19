@@ -8,6 +8,7 @@ const PRODUCTS = [
         price: 24.95,
         category_id: 1,
         onSale: true,
+        comments: []
     },
     {
         id: 2,
@@ -18,6 +19,7 @@ const PRODUCTS = [
         price: 152.03,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 3,
@@ -28,6 +30,7 @@ const PRODUCTS = [
         price: 468.87,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 4,
@@ -38,6 +41,7 @@ const PRODUCTS = [
         price: 239.92,
         category_id: 2,
         onSale: true,
+        comments: []
     },
     {
         id: 5,
@@ -48,6 +52,7 @@ const PRODUCTS = [
         price: 44.47,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 6,
@@ -58,6 +63,7 @@ const PRODUCTS = [
         price: 363.66,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 7,
@@ -68,6 +74,7 @@ const PRODUCTS = [
         price: 36.34,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 8,
@@ -78,6 +85,7 @@ const PRODUCTS = [
         price: 373.67,
         category_id: 2,
         onSale: true,
+        comments: []
     },
     {
         id: 9,
@@ -88,6 +96,7 @@ const PRODUCTS = [
         price: 436.16,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 10,
@@ -98,6 +107,7 @@ const PRODUCTS = [
         price: 154.24,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 11,
@@ -108,6 +118,7 @@ const PRODUCTS = [
         price: 287.26,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 12,
@@ -118,6 +129,7 @@ const PRODUCTS = [
         price: 158.01,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 13,
@@ -128,6 +140,7 @@ const PRODUCTS = [
         price: 133.91,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 14,
@@ -138,6 +151,7 @@ const PRODUCTS = [
         price: 86.83,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 15,
@@ -147,7 +161,8 @@ const PRODUCTS = [
         quantity: 9,
         price: 412.3,
         category_id: 7,
-        onSale: true,
+        onSale: false,
+        comments: []
     },
     {
         id: 16,
@@ -158,6 +173,7 @@ const PRODUCTS = [
         price: 507.53,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 17,
@@ -168,6 +184,7 @@ const PRODUCTS = [
         price: 124.44,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 18,
@@ -178,6 +195,7 @@ const PRODUCTS = [
         price: 264.12,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 19,
@@ -188,6 +206,7 @@ const PRODUCTS = [
         price: 266.26,
         category_id: 8,
         onSale: false,
+        comments: []
     },
     {
         id: 20,
@@ -198,6 +217,7 @@ const PRODUCTS = [
         price: 456.54,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 21,
@@ -208,6 +228,7 @@ const PRODUCTS = [
         price: 265.87,
         category_id: 4,
         onSale: false,
+        comments: []
     },
     {
         id: 22,
@@ -218,6 +239,7 @@ const PRODUCTS = [
         price: 70.9,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 23,
@@ -228,6 +250,7 @@ const PRODUCTS = [
         price: 83.71,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 24,
@@ -238,6 +261,7 @@ const PRODUCTS = [
         price: 225.64,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 25,
@@ -248,6 +272,7 @@ const PRODUCTS = [
         price: 379.05,
         category_id: 9,
         onSale: false,
+        comments: []
     },
     {
         id: 26,
@@ -258,6 +283,7 @@ const PRODUCTS = [
         price: 47.8,
         category_id: 3,
         onSale: false,
+        comments: []
     },
     {
         id: 27,
@@ -268,6 +294,7 @@ const PRODUCTS = [
         price: 225.79,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 28,
@@ -278,6 +305,7 @@ const PRODUCTS = [
         price: 223.96,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 29,
@@ -288,6 +316,7 @@ const PRODUCTS = [
         price: 26.28,
         category_id: 4,
         onSale: false,
+        comments: []
     },
     {
         id: 30,
@@ -298,6 +327,7 @@ const PRODUCTS = [
         price: 60.52,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 31,
@@ -308,6 +338,7 @@ const PRODUCTS = [
         price: 277.06,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 32,
@@ -318,6 +349,7 @@ const PRODUCTS = [
         price: 323.7,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 33,
@@ -328,6 +360,7 @@ const PRODUCTS = [
         price: 48.32,
         category_id: 7,
         onSale: false,
+        comments: []
     },
     {
         id: 34,
@@ -338,6 +371,7 @@ const PRODUCTS = [
         price: 441.96,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 35,
@@ -348,6 +382,7 @@ const PRODUCTS = [
         price: 48.76,
         category_id: 4,
         onSale: false,
+        comments: []
     },
     {
         id: 36,
@@ -358,6 +393,7 @@ const PRODUCTS = [
         price: 336.2,
         category_id: 4,
         onSale: false,
+        comments: []
     },
     {
         id: 37,
@@ -368,6 +404,7 @@ const PRODUCTS = [
         price: 294.08,
         category_id: 7,
         onSale: false,
+        comments: []
     },
     {
         id: 38,
@@ -378,6 +415,7 @@ const PRODUCTS = [
         price: 352.66,
         category_id: 2,
         onSale: false,
+        comments: []
     },
     {
         id: 39,
@@ -388,6 +426,7 @@ const PRODUCTS = [
         price: 111.67,
         category_id: 2,
         onSale: false,
+        comments: []
     },
     {
         id: 40,
@@ -398,6 +437,7 @@ const PRODUCTS = [
         price: 397.27,
         category_id: 7,
         onSale: false,
+        comments: []
     },
     {
         id: 41,
@@ -408,6 +448,7 @@ const PRODUCTS = [
         price: 105.08,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 42,
@@ -418,6 +459,7 @@ const PRODUCTS = [
         price: 476.28,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 43,
@@ -428,6 +470,7 @@ const PRODUCTS = [
         price: 43.4,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 44,
@@ -438,6 +481,7 @@ const PRODUCTS = [
         price: 370.11,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 45,
@@ -448,6 +492,7 @@ const PRODUCTS = [
         price: 439.54,
         category_id: 8,
         onSale: false,
+        comments: []
     },
     {
         id: 46,
@@ -458,6 +503,7 @@ const PRODUCTS = [
         price: 307.65,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 47,
@@ -468,6 +514,7 @@ const PRODUCTS = [
         price: 275.04,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 48,
@@ -478,6 +525,7 @@ const PRODUCTS = [
         price: 59.29,
         category_id: 5,
         onSale: false,
+        comments: []
     },
     {
         id: 49,
@@ -488,6 +536,7 @@ const PRODUCTS = [
         price: 34.98,
         category_id: 6,
         onSale: false,
+        comments: []
     },
     {
         id: 50,
@@ -498,6 +547,7 @@ const PRODUCTS = [
         price: 247.95,
         category_id: 1,
         onSale: false,
+        comments: []
     },
     {
         id: 51,
@@ -508,6 +558,7 @@ const PRODUCTS = [
         price: 49.02,
         category_id: 7,
         onSale: false,
+        comments: []
     },
     {
         id: 52,
@@ -518,6 +569,7 @@ const PRODUCTS = [
         price: 190.22,
         category_id: 7,
         onSale: false,
+        comments: []
     },
     {
         id: 53,
@@ -528,6 +580,7 @@ const PRODUCTS = [
         price: 366.51,
         category_id: 3,
         onSale: false,
+        comments: []
     },
     {
         id: 54,
@@ -538,6 +591,7 @@ const PRODUCTS = [
         price: 339.88,
         category_id: 4,
         onSale: false,
+        comments: []
     },
     {
         id: 55,
@@ -548,6 +602,7 @@ const PRODUCTS = [
         price: 399.62,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 56,
@@ -558,6 +613,7 @@ const PRODUCTS = [
         price: 185,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 57,
@@ -568,6 +624,7 @@ const PRODUCTS = [
         price: 203.23,
         category_id: 2,
         onSale: true,
+        comments: []
     },
     {
         id: 58,
@@ -578,6 +635,7 @@ const PRODUCTS = [
         price: 146.01,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 59,
@@ -588,6 +646,7 @@ const PRODUCTS = [
         price: 153.62,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 60,
@@ -598,6 +657,7 @@ const PRODUCTS = [
         price: 353.71,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 61,
@@ -608,6 +668,7 @@ const PRODUCTS = [
         price: 401.8,
         category_id: 8,
         onSale: true,
+        comments: []
     },
     {
         id: 62,
@@ -618,6 +679,7 @@ const PRODUCTS = [
         price: 490.9,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 63,
@@ -628,6 +690,7 @@ const PRODUCTS = [
         price: 357.74,
         category_id: 2,
         onSale: true,
+        comments: []
     },
     {
         id: 64,
@@ -638,6 +701,7 @@ const PRODUCTS = [
         price: 188.28,
         category_id: 2,
         onSale: true,
+        comments: []
     },
     {
         id: 65,
@@ -648,6 +712,7 @@ const PRODUCTS = [
         price: 399.21,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 66,
@@ -658,6 +723,7 @@ const PRODUCTS = [
         price: 236.76,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 67,
@@ -668,6 +734,7 @@ const PRODUCTS = [
         price: 315.15,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 68,
@@ -678,6 +745,7 @@ const PRODUCTS = [
         price: 181.66,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 69,
@@ -688,6 +756,7 @@ const PRODUCTS = [
         price: 177.73,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 70,
@@ -698,6 +767,7 @@ const PRODUCTS = [
         price: 478.26,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 71,
@@ -708,6 +778,7 @@ const PRODUCTS = [
         price: 387.47,
         category_id: 9,
         onSale: true,
+        comments: []
     },
     {
         id: 72,
@@ -718,6 +789,7 @@ const PRODUCTS = [
         price: 92.25,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 73,
@@ -728,6 +800,7 @@ const PRODUCTS = [
         price: 257.69,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 74,
@@ -738,6 +811,7 @@ const PRODUCTS = [
         price: 276.32,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 75,
@@ -748,6 +822,7 @@ const PRODUCTS = [
         price: 378.43,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 76,
@@ -758,6 +833,7 @@ const PRODUCTS = [
         price: 306.74,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 77,
@@ -768,6 +844,7 @@ const PRODUCTS = [
         price: 168.54,
         category_id: 8,
         onSale: true,
+        comments: []
     },
     {
         id: 78,
@@ -778,6 +855,7 @@ const PRODUCTS = [
         price: 425.17,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 79,
@@ -788,6 +866,7 @@ const PRODUCTS = [
         price: 96.69,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 80,
@@ -798,6 +877,7 @@ const PRODUCTS = [
         price: 205.34,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 81,
@@ -808,6 +888,7 @@ const PRODUCTS = [
         price: 210.62,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 82,
@@ -818,6 +899,7 @@ const PRODUCTS = [
         price: 147.75,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 83,
@@ -828,6 +910,7 @@ const PRODUCTS = [
         price: 79.22,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 84,
@@ -838,6 +921,7 @@ const PRODUCTS = [
         price: 82.25,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 85,
@@ -848,6 +932,7 @@ const PRODUCTS = [
         price: 390.07,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 86,
@@ -858,6 +943,7 @@ const PRODUCTS = [
         price: 400.96,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 87,
@@ -868,6 +954,7 @@ const PRODUCTS = [
         price: 450.83,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 88,
@@ -878,6 +965,7 @@ const PRODUCTS = [
         price: 458.44,
         category_id: 4,
         onSale: true,
+        comments: []
     },
     {
         id: 89,
@@ -888,6 +976,7 @@ const PRODUCTS = [
         price: 178.05,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 90,
@@ -898,6 +987,7 @@ const PRODUCTS = [
         price: 245.09,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 91,
@@ -908,7 +998,7 @@ const PRODUCTS = [
         price: 495.87,
         category_id: 7,
         onSale: true,
-
+        comments: []
     },
     {
         id: 92,
@@ -919,6 +1009,7 @@ const PRODUCTS = [
         price: 271.96,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 93,
@@ -929,6 +1020,7 @@ const PRODUCTS = [
         price: 229.34,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 94,
@@ -939,6 +1031,7 @@ const PRODUCTS = [
         price: 214.1,
         category_id: 6,
         onSale: true,
+        comments: []
     },
     {
         id: 95,
@@ -949,6 +1042,7 @@ const PRODUCTS = [
         price: 279.86,
         category_id: 7,
         onSale: true,
+        comments: []
     },
     {
         id: 96,
@@ -959,6 +1053,7 @@ const PRODUCTS = [
         price: 178.44,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 97,
@@ -969,6 +1064,7 @@ const PRODUCTS = [
         price: 346.88,
         category_id: 5,
         onSale: true,
+        comments: []
     },
     {
         id: 98,
@@ -979,6 +1075,7 @@ const PRODUCTS = [
         price: 89.67,
         category_id: 3,
         onSale: true,
+        comments: []
     },
     {
         id: 99,
@@ -988,7 +1085,8 @@ const PRODUCTS = [
         quantity: 9,
         price: 89.75,
         category_id: 9,
-        onSale: true
+        onSale: true,
+        comments: []
     },
     {
         id: 100,
@@ -998,21 +1096,22 @@ const PRODUCTS = [
         quantity: 50,
         price: 512.25,
         category_id: 10,
-        onSale: true
+        onSale: true,
+        comments: []
     }
 ];
 
 const CATEGORIES = [
-    { id: 1, name: 'handmade' },
-    { id: 2, name: 'things to buy' },
-    { id: 3, name: 'things to look at' },
-    { id: 4, name: 'common goods' },
-    { id: 5, name: 'rare goods' },
-    { id: 6, name: 'unique goods' },
-    { id: 7, name: 'cool goods' },
-    { id: 8, name: 'item to gift' },
-    { id: 9, name: 'special sale' },
-    { id: 10, name: 'antique' }
+    {id: 1, name: 'handmade'},
+    {id: 2, name: 'things to buy'},
+    {id: 3, name: 'things to look at'},
+    {id: 4, name: 'common goods'},
+    {id: 5, name: 'rare goods'},
+    {id: 6, name: 'unique goods'},
+    {id: 7, name: 'cool goods'},
+    {id: 8, name: 'item to gift'},
+    {id: 9, name: 'special sale'},
+    {id: 10, name: 'antique'}
 ]
 
 module.exports = {PRODUCTS, CATEGORIES}
