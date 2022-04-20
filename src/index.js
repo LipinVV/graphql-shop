@@ -20,7 +20,7 @@ const root = createRoot(container);
 root.render(
     <ApolloProvider client={client}>
         <BrowserRouter>
-            <App/>
+            <App client={client}/>
         </BrowserRouter>
     </ApolloProvider>
 );

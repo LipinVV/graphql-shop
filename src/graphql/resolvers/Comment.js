@@ -9,5 +9,11 @@ exports.Mutation = {
         const targetProduct =  products.PRODUCTS.find(p => p.id === input.productId);
         targetProduct.comments.push(newComment)
         return newComment;
+    },
+    updateComment: (parent, {input}, products) => {
+        const targetProduct =  products.PRODUCTS.find(p => p.id === input.productId);
+        const found = targetProduct.comments.find(comment => comment.id === input.commentId);
+        found.text = input.text;
+        return found;
     }
 }

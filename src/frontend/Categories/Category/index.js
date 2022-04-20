@@ -1,17 +1,17 @@
 import {Link, useParams} from "react-router-dom";
 import {GetProductsByCategory} from "../../../graphql/hooks/getProductsByCategory";
 import {useEffect, useState} from "react";
-import './category.css';
 import {Comments} from "../../Products/Product/Comments/Comments";
+import './category.css';
 
-export const Category = () => {
+export const Category = ({client}) => {
     const {id} = useParams();
-    const {error, loading, data} = GetProductsByCategory(Number(id));
+    const {error, loading, data, refetch} = GetProductsByCategory(Number(id));
     const products = data?.category?.products;
 
     const getData = async () => {
         try {
-            const allDataFromServer = await data?.category?.products;
+            const allDataFromServer = await products;
             setProductsToSort(allDataFromServer);
             setFilteredProducts(allDataFromServer);
         } catch (error) {
@@ -101,7 +101,6 @@ export const Category = () => {
                                 if (event.target.checked) {
                                     priceScalingOption.push(priceScaleOption);
                                 } else {
-                                    console.log('ELSE')
                                     priceScalingOption = priceScalingOption.filter(selectedOption => priceScaleOption !== selectedOption);
                                 }
                                 setFilter({...filter, priceScaling: priceScalingOption});
@@ -116,7 +115,7 @@ export const Category = () => {
                 <Link to={`/products/${product.id}`} className='category__product_link'>{product.name}</Link>
                 <span>{product.price}</span>
                 <span>{product.onSale ? 'On Sale!' : 'Regular Price'}</span>
-                <Comments comments={product.comments} productId={product.id} />
+                <Comments comments={product.comments} productId={product.id} refetch={refetch} client={client}/>
             </div>)}
         </div>
     </div>

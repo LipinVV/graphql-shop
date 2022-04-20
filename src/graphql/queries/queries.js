@@ -5,7 +5,11 @@ export const GET_PRODUCTS = gql`
         products {
             id,
             name,
-            color
+            color,
+            comments {
+                id,
+                text
+            }
         }
     }
 `

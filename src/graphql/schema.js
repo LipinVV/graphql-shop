@@ -33,6 +33,13 @@ exports.typeDefs = gql`
     
     type Mutation {
         addComment(input: AddCommentInput!): Comment!
+        updateComment(input: updateCommentInput!): Comment!
+    }
+
+    input updateCommentInput {
+        productId: Int!
+        text: String
+        commentId: String!
     }
     
     input AddCommentInput {
