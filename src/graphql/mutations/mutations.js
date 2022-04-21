@@ -18,3 +18,9 @@ export const UPDATE_COMMENT_IN_PRODUCT = gql`
         }
     }
 `;
+
+export const DELETE_COMMENT_IN_PRODUCT = gql`
+   mutation ($productId: Int! $commentId: String!) {
+       deleteComment(input: {productId: $productId commentId: $commentId})
+   }
+`;

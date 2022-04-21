@@ -15,5 +15,10 @@ exports.Mutation = {
         const found = targetProduct.comments.find(comment => comment.id === input.commentId);
         found.text = input.text;
         return found;
-    }
+    },
+    deleteComment: (parent, {input}, products) => {
+        const targetProduct =  products.PRODUCTS.find(p => p.id === input.productId);
+        targetProduct.comments = targetProduct.comments.filter(comment => comment.id !== input.commentId);
+        return true;
+    },
 }

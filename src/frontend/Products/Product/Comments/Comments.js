@@ -1,9 +1,13 @@
 import {useEffect, useState} from "react";
 import {useMutation} from "@apollo/client";
-import {ADD_COMMENT_TO_PRODUCT, UPDATE_COMMENT_IN_PRODUCT} from "../../../../graphql/mutations/mutations";
-import {GET_PRODUCTS} from "../../../../graphql/queries/queries";
+import {
+    ADD_COMMENT_TO_PRODUCT,
+    DELETE_COMMENT_IN_PRODUCT,
+    UPDATE_COMMENT_IN_PRODUCT
+} from "../../../../graphql/mutations/mutations";
+import {GET_PRODUCTS_BY_CATEGORY} from "../../../../graphql/queries/queries";
 
-export const Comments = ({comments, productId}) => {
+export const Comments = ({comments, productId, id}) => {
     const [commentary, setCommentary] = useState('');
     const [startComment, setStartComment] = useState(false);
     const [newComments, setNewComments] = useState([]);
@@ -21,7 +25,7 @@ export const Comments = ({comments, productId}) => {
                     productId: productId,
                     text: commentary
                 },
-                refetchQueries: [{query: GET_PRODUCTS}]
+                refetchQueries: [{query: GET_PRODUCTS_BY_CATEGORY, variables: {id}}]
             })
         } catch (error) {
             console.error(error)
@@ -45,6 +49,22 @@ export const Comments = ({comments, productId}) => {
         }
     }
 
+    const [deleteComment] = useMutation(DELETE_COMMENT_IN_PRODUCT);
+
+    const deleteCommentHandler = async (commentId) => {
+        try {
+            await deleteComment({
+                variables: {
+                    commentId: commentId,
+                    productId: productId,
+                },
+                refetchQueries: [{query: GET_PRODUCTS_BY_CATEGORY, variables: {id}}]
+            })
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
     return (
         <div>
             {newComments?.map(comment => {
@@ -56,7 +76,7 @@ export const Comments = ({comments, productId}) => {
                                    value={commentary}
                                    onChange={(event) => setCommentary(event.target.value)}/>
                         </div>}
-                        {edit === false ?
+                        {edit === false &&
                             <button value={comment.id} type='button' onClick={(event) => {
                                 if (event.target?.value === comment.id) {
                                     setEdit(!edit);
@@ -71,8 +91,11 @@ export const Comments = ({comments, productId}) => {
                                     }))
                                 }
                             }}>edit comment
-                            </button> :
-                            <button type='button' onClick={() => {
+                            </button> }
+                        {<button type='button' onClick={() => {
+                            void deleteCommentHandler(comment.id);
+                        }}>delete</button>}
+                        {comment.edit === true &&<button type='button' onClick={() => {
                                 setEdit(!edit);
                                 void updateCommentHandler(comment.id);
                             }}>confirm</button>}

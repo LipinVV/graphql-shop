@@ -6,7 +6,7 @@ import './category.css';
 
 export const Category = ({client}) => {
     const {id} = useParams();
-    const {error, loading, data, refetch} = GetProductsByCategory(Number(id));
+    const {error, loading, data} = GetProductsByCategory(Number(id));
     const products = data?.category?.products;
 
     const getData = async () => {
@@ -115,7 +115,7 @@ export const Category = ({client}) => {
                 <Link to={`/products/${product.id}`} className='category__product_link'>{product.name}</Link>
                 <span>{product.price}</span>
                 <span>{product.onSale ? 'On Sale!' : 'Regular Price'}</span>
-                <Comments comments={product.comments} productId={product.id} refetch={refetch} client={client}/>
+                <Comments comments={product.comments} productId={product.id} client={client} id={Number(id)}/>
             </div>)}
         </div>
     </div>
