@@ -1,8 +1,9 @@
+const url = require("url");
 const PRODUCTS = [
     {
         id: 1,
-        name: "Handcrafted Wooden Gloves",
-        description: "A lime is a pear from the right perspective. They were lost without the cheerful orange that composed their cow! Quoting with intend: \"The first self-disciplined apple is, in its own way, a fly!\" By the waya nectarine is the nectarine of a scorpion. In modern times a blackberry is a smiling strawberry. A decisive octopus's panda comes with it the thought that the adaptable dog is a rat!",
+        name: "Tomato Cream Soup",
+        description: "Awesome cream soup with your favourite crunches",
         color: "mint green",
         quantity: 0,
         price: 24.95,
@@ -540,11 +541,11 @@ const PRODUCTS = [
     },
     {
         id: 50,
-        name: "Sleek Steel Computer",
-        description: "As far as we can estimate, a banana of the octopus is assumed to be a dashing owl. If this was somewhat unclear, a wolf can hardly be considered a thoughtful dog without also being an octopus. Some entertaining bees are thought of simply as watermelons. Some assert that congratulations to the goat that won the lively frog with a banana! An endurable raspberry's eagle comes with it the thought that the brave dog is a cherry! This could be, or perhaps the first fair-minded hamster is, in its own way, a blueberry! One cannot separate ants from warmhearted blueberries. What we don't know for sure is whether or not a grapes sees a sheep as a sympathetic goat?",
+        name: "Mushroom Cream Soup",
+        description: "Your mushroom dreams came true....",
         color: "fuchsia",
         quantity: 9,
-        price: 247.95,
+        price: 17.95,
         category_id: 1,
         onSale: false,
         comments: []
@@ -1102,16 +1103,38 @@ const PRODUCTS = [
 ];
 
 const CATEGORIES = [
-    {id: 1, name: 'handmade'},
-    {id: 2, name: 'things to buy'},
-    {id: 3, name: 'things to look at'},
-    {id: 4, name: 'common goods'},
-    {id: 5, name: 'rare goods'},
-    {id: 6, name: 'unique goods'},
-    {id: 7, name: 'cool goods'},
-    {id: 8, name: 'item to gift'},
-    {id: 9, name: 'special sale'},
-    {id: 10, name: 'antique'}
+
+//     {id: 1, name: 'Soups', link: require('./pictures/categories/soups.jpg')},
+// {id: 2, name: 'Salads', link: require('./pictures/categories/salads.jpg')},
+// {id: 3, name: 'Pizza', link: require('./pictures/categories/pizza.jpg')},
+// {id: 4, name: 'Snacks', link: require('./pictures/categories/snacks.jpg')},
+// {id: 5, name: 'Breakfast', link: require('./pictures/categories/breakfast.jpg')},
+// {id: 6, name: 'Hot meals', link: require('./pictures/categories/hot-meals.jpg')},
+// {id: 7, name: 'Pies', link: require('./pictures/categories/pies.jpg')},
+// {id: 8, name: 'Wok', link: require('./pictures/categories/wok.jpg')},
+// {id: 9, name: 'Deserts', link: require('./pictures/categories/deserts.jpg')},
+// {id: 10, name: 'Drinks', link: require('./pictures/categories/drinks.jpg')}
+    {id: 1, name: 'Soups', link: "./pictures/categories/soups.jpg"},
+    {id: 2, name: 'Salads', link: "./pictures/categories/salads.jpg"},
+    {id: 3, name: 'Pizza', link: "./pictures/categories/pizza.jpg"},
+    {id: 4, name: 'Snacks', link: "./pictures/categories/snacks.jpg"},
+    {id: 5, name: 'Breakfast', link: "./pictures/categories/breakfast.jpg"},
+    {id: 6, name: 'Hot meals', link: "./pictures/categories/hot-meals.jpg"},
+    {id: 7, name: 'Pies', link: "./pictures/categories/pies.jpg"},
+    {id: 8, name: 'Wok', link: "./pictures/categories/wok.jpg"},
+    {id: 9, name: 'Deserts', link: "./pictures/categories/deserts.jpg"},
+    {id: 10, name: 'Drinks', link: "./pictures/categories/drinks.jpg"}
 ]
 
 module.exports = {PRODUCTS, CATEGORIES}
+
+// {id: 1, name: 'Soups', link: require('./pictures/categories/soups.jpg')},
+// {id: 2, name: 'Salads', link: require('./pictures/categories/salads.jpg')},
+// {id: 3, name: 'Pizza', link: require('./pictures/categories/pizza.jpg')},
+// {id: 4, name: 'Snacks', link: require('./pictures/categories/snacks.jpg')},
+// {id: 5, name: 'Breakfast', link: require('./pictures/categories/breakfast.jpg')},
+// {id: 6, name: 'Hot meals', link: require('./pictures/categories/hot-meals.jpg')},
+// {id: 7, name: 'Pies', link: require('./pictures/categories/pies.jpg')},
+// {id: 8, name: 'Wok', link: require('./pictures/categories/wok.jpg')},
+// {id: 9, name: 'Deserts', link: require('./pictures/categories/deserts.jpg')},
+// {id: 10, name: 'Drinks', link: require('./pictures/categories/drinks.jpg')}

@@ -4,7 +4,7 @@ const {Category} = require("../graphql/resolvers/Category");
 const {Product} = require("../graphql/resolvers/Product");
 const {Query} = require("../graphql/resolvers/Query");
 const {Mutation} = require("../graphql/resolvers/Comment");
-const {PRODUCTS, CATEGORIES} = require("../data/products");
+const {PRODUCTS, CATEGORIES} = require("../server/data/products");
 
 const server = new ApolloServer({
     typeDefs,
@@ -23,6 +23,3 @@ server.listen().then(({url}) => {
 
 
 //  npm install nodemon -g
-// String, Float, Boolean, Int - scalar type, если передать null без восклициательного знака - примет, с ! - строгий режим
-// Object type
-// parent and args - read about them

@@ -23,6 +23,7 @@ exports.typeDefs = gql`
     type Category {
         id: ID
         name: String!
+        link: String!
         products(filter: ProductFilterBySale):  [Product!]!
     }
     

@@ -1,6 +1,7 @@
 import {useParams} from "react-router-dom";
 import {FilteredProduct} from "../../../graphql/hooks/filteredProduct";
 import './product.css';
+import {Comments} from "./Comments/Comments";
 
 export const Product = () => {
     const {id} = useParams();
@@ -24,9 +25,11 @@ export const Product = () => {
                 <span className='product__field_decor'>Category: </span>
                 {filteredProduct.category.name}
             </span>
-            <span>{filteredProduct.comments.map(comment => {
-                return <span key={comment.id}>{comment.text}</span>
-            })}</span>
+            <Comments id={Number(id)} comments={filteredProduct.comments} productId={filteredProduct.id}/>
         </div>
     )
 }
+
+// {/*<span>{filteredProduct.comments.map(comment => {*/}
+// {/*    return <span key={comment.id}>{comment.text}</span>*/}
+// {/*})}</span>*/}

@@ -5,7 +5,8 @@ import {
     DELETE_COMMENT_IN_PRODUCT,
     UPDATE_COMMENT_IN_PRODUCT
 } from "../../../../graphql/mutations/mutations";
-import {GET_PRODUCTS_BY_CATEGORY} from "../../../../graphql/queries/queries";
+import {GET_FILTERED_PRODUCT} from "../../../../graphql/queries/queries";
+import './comments.css';
 
 export const Comments = ({comments, productId, id}) => {
     const [commentary, setCommentary] = useState('');
@@ -25,7 +26,7 @@ export const Comments = ({comments, productId, id}) => {
                     productId: productId,
                     text: commentary
                 },
-                refetchQueries: [{query: GET_PRODUCTS_BY_CATEGORY, variables: {id}}]
+                refetchQueries: [{query: GET_FILTERED_PRODUCT, variables: {id}}]
             })
         } catch (error) {
             console.error(error)
@@ -58,7 +59,7 @@ export const Comments = ({comments, productId, id}) => {
                     commentId: commentId,
                     productId: productId,
                 },
-                refetchQueries: [{query: GET_PRODUCTS_BY_CATEGORY, variables: {id}}]
+                refetchQueries: [{query: GET_FILTERED_PRODUCT, variables: {id}}]
             })
         } catch (error) {
             console.error(error)
@@ -66,39 +67,53 @@ export const Comments = ({comments, productId, id}) => {
     }
 
     return (
-        <div>
+        <div className='comments'>
             {newComments?.map(comment => {
                 return (
-                    <div key={comment.id}>
-                        <div>{comment.text}</div>
-                        {comment.edit === true && <div>
+                    <div key={comment.id} className='comment'>
+                        <div className='comment__text'>{comment.text}</div>
+                        {comment.edit === true && <div className='comment__input'>
                             <input type='text'
                                    value={commentary}
                                    onChange={(event) => setCommentary(event.target.value)}/>
                         </div>}
                         {edit === false &&
-                            <button value={comment.id} type='button' onClick={(event) => {
-                                if (event.target?.value === comment.id) {
-                                    setEdit(!edit);
-                                    setCommentary(comment.text);
-                                    setNewComments(newComments.map(comment => {
-                                        if (comment.id === event.target.value) {
-                                            return {
-                                                ...comment, edit: true
+                            <button
+                                className='comment__button comment__button_edit'
+                                value={comment.id}
+                                type='button'
+                                onClick={(event) => {
+                                    const { value } = event.target;
+                                    if (value === comment.id) {
+                                        setEdit(!edit);
+                                        setCommentary(comment.text);
+                                        setNewComments(newComments.map(comment => {
+                                            const { value } = event.target;
+                                            if (comment.id === value) {
+                                                return {
+                                                    ...comment, edit: true
+                                                }
                                             }
-                                        }
-                                        return comment;
-                                    }))
-                                }
-                            }}>edit comment
-                            </button> }
-                        {<button type='button' onClick={() => {
-                            void deleteCommentHandler(comment.id);
-                        }}>delete</button>}
-                        {comment.edit === true &&<button type='button' onClick={() => {
+                                            return comment;
+                                        }))
+                                    }
+                                }}>edit
+                            </button>}
+                        {edit !== true && <button
+                            className='comment__button comment__button_delete'
+                            type='button'
+                            onClick={() => {
+                                void deleteCommentHandler(comment.id);
+                            }}>delete
+                        </button>}
+                        {comment.edit === true && <button
+                            className='comment__button comment__button_confirm'
+                            type='button'
+                            onClick={() => {
                                 setEdit(!edit);
                                 void updateCommentHandler(comment.id);
-                            }}>confirm</button>}
+                            }}>confirm
+                        </button>}
                     </div>
                 )
             })}
@@ -108,11 +123,19 @@ export const Comments = ({comments, productId, id}) => {
                        onChange={(event) => setCommentary(event.target.value)}/>
             </div>}
             {startComment === false ?
-                <button type='button' onClick={() => setStartComment(!startComment)}>add comment</button> :
-                <button type='button' onClick={() => {
-                    setStartComment(!startComment);
-                    void writeCommentHandler();
-                }}>submit</button>}
+                <button
+                    className='comment__button comment__button_add'
+                    type='button'
+                    onClick={() => setStartComment(!startComment)}>add comment
+                </button> :
+                <button
+                    className='comment__button comment__button_submit'
+                    type='button'
+                    onClick={() => {
+                        setStartComment(!startComment);
+                        void writeCommentHandler();
+                    }}>submit
+                </button>}
         </div>
     )
 }
