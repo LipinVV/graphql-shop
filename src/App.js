@@ -11,6 +11,7 @@ function App({client}) {
 
     return (
         <div className="App">
+            <h1>Graphql mini-shop</h1>
             <Routes>
                 <Route path='/' element={<Navigation />}/>
                 <Route path='/categories' element={<Categories />}/>
@@ -22,5 +23,5 @@ function App({client}) {
         </div>
     );
 }
-// понять, как после выбора категории далее управлять фильтрацией кнопками
+
 export default App;
